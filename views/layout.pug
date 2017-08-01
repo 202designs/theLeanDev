@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/materialize.css')
+  body
+    header
+        nav.black
+            div.nav-wrapper.container
+                a.brand-logo Simulsys
+                ul.right.hide-on-med-and-down
+                    li Contact Us
+                    li Services
+                    li Products
+    main.container        
+        block content
+        block contactlist
+    footer.page-footer.black
+        div.container
+            div.row
+                div.col.l6.s12
+                    h5.white-text Simulsys
+        div.footer-copyright
+            div.container @2017 Copyright
+            
+        
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='/javascripts/materialize.min.js')
+    script(src='/javascripts/default.js')

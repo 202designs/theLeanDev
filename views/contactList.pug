@@ -1,0 +1,16 @@
+extends layout
+
+block contactlist   
+    section.contactForm
+                .row
+                    form.col.s12
+                    .row
+                        .input-field.col.s6
+                            input#contactName.validate( type='text')
+                            label(for='contactName') Name
+                        .input-field.col.s6
+                            input#contactEmail.validate(type='email')
+                            label(for='contactEmail') Email
+                a.waves-effect.waves-light.btn.black#createContact Create Contact  
+    section.splash
+    ul.contactsList.collection
