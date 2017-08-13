@@ -1,40 +1,44 @@
 $(document).ready(function() {
     $('select').material_select();
     $('.carousel.carousel-slider').carousel({fullWidth: true});
-    getListData();
+
   });
 
-function getListData(){
-    $.getJSON("https://apex.oracle.com/pls/apex/simulsys/contacts/contactList/", function(data){
-            //alert('data loaded');
+  $("#sendContact").click(function(){
+    var contactName = $('#contactName').val();
+    var contactEmail = $('#contactEmail').val();
+    var contactPhone = $('#contactPhone').val();
+    //var clientName  = $('#clientName').val();
+    var contactComments = $('#contactDescription').val();
 
-            var items = (data.items);
+    var restUrl = "https://simulsys.com/apex/simulsys/client/createClientContact/";
+         $.ajax({url: restUrl,
+                 type: 'post',
+                 headers: {"CONTACT_NAME": contactName,
+                           "CONTACT_EMAIL": contactEmail,
+                           "CONTACT_PHONE": contactPhone,
+                           "CONTACT_COMMENTS": contactComments
+                           }
+                                      });
 
-            for (var i=0; i < items.length; i++) {
-            console.log(data);
-            var contactName = items[i].name;
-            var contactEmail = items[i].email;
-            var contactId    = items[i].contact_id;
+    $('#contactName').val('');
+    $('#contactEmail').val('');
+    $('#contactPhone').val('');
+    $('#contactDescription').val('');
+    $('#sendContact').addClass('disabled');
 
-            $("ul.contactsList").append('<li class="collection-item">'+contactName+ '    '+contactEmail+'</li>'  );
 
-          }
-        });}
+    });
+    // Function that validates email address through a regular expression.
+    $( "#contactEmail" ).change(function() {
+    var valEmail = $("#contactEmail").val();
+    var expression = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+    if (expression.test(valEmail)) {
+    $('#sendContact').removeClass('disabled');
 
-          $("#createContact").click(function(){
-            var contactName = $('#contactName').val();
-            var contactEmail = $('#contactEmail').val();
-            var restUrl = "https://apex.oracle.com/pls/apex/simulsys/contacts/createContacts/";
-                 $.ajax({url: restUrl,
-                         type: 'post',
-                         headers: {"NAME": contactName,
-                                   "EMAIL": contactEmail}
-                                              });
-
-            $('#contactName').val('');
-            $('#contactEmail').val('');
-            //*$( "ul.ulcontacts" ).empty();
-            //getListData();
-            $("ul.contactsList").prepend('<li class="collection-item">'+contactName+ '    '+contactEmail+'</li>'  );
-
-            });
+    }
+    else {
+    $('#sendContact').addClass('disabled');
+    Materialize.toast('Email Not Valid', 4000, 'rounded')
+    }
+  });

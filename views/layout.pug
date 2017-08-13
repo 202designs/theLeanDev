@@ -2,25 +2,85 @@ doctype html
 html
   head
     title= title
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+    meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/materialize.css')
+    style   
   body
     header
         nav.black
             div.nav-wrapper.container
-                a.brand-logo Simulsys
+                a.brand-logo(href="/" ) The Lean Dev
                 ul.right.hide-on-med-and-down
-                    li Contact Us
-                    li Services
-                    li Products
-    main.container        
-        block content
-        block contactlist
+                  li 
+                    a(href="/contact") Contact Us
+                  li
+                    a(href="/services") Services
+                  li 
+                    a(href="https://simulsys.co") Blog
+    main    
+      .row
+        section.container.valign-wrapper#section1
+          h2.header.text-flow.center-align The Lean Dev
+            p.grey-text.text-darken-3.lighten-3.flow-text
+              | “A community space 
+              |where you can focus on what you love doing, and we will handle all the hassles of running an office.” 
+            p.grey-text.text-darken-3.lighten-3.flow-text
+              a(class="waves-effect waves-purple waves-ripple btn-flat") Call To Action
+      .row.container
+        .container.col.s12.m3.l3
+          .card.z-depth-1
+            a(class="waves-effect waves-yellow waves-ripple" )
+              .card-image
+                img(src='/images/wireidea64x64.svg' class="scaleicon")
+                span.card-title.black-text 
+              
+            .card-content
+              p
+                | Idea Consultation.
+              
+        .container.col.s12.m3.l3                  
+          .card
+            a(class="waves-effect waves-purple waves-ripple")
+              .card-image
+                img(src='/images/puzzle64x64.svg' class="scaleicon")
+                span.card-title 
+                
+            .card-content
+              p
+                | Project Planning. 
+        .container.col.s12.m3.l3        
+          .card
+            .card-image
+              img(src='/images/gears.svg' class="scaleicon")
+              span.card-title 
+              
+            .card-content
+              p
+                | Building.   
+        .container.col.s12.m3.l3        
+          .card
+            .card-image
+              img(src='/images/product.svg' class="scaleicon")
+              span.card-title 
+              
+            .card-content
+              p
+                | Product Delivered. 
+      .container   
+        .row
+          article.container.valign-wrapper.col.s12
+            h2.header.text-flow.center-align Title & Slug
+              p.grey-text.text-darken-3.lighten-3.flow-text
+                | Parallax is an effect where the background content or 
+                | image in this case, is moved at a different speed than the foreground content while scrolling. 
+          block content
     footer.page-footer.black
         div.container
             div.row
                 div.col.l6.s12
-                    h5.white-text Simulsys
+                    h5.white-text The Lean Dev
         div.footer-copyright
             div.container @2017 Copyright
             

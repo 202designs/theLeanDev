@@ -4,8 +4,18 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-  res.render('contactList', { title: 'Express' });
-  
+
+
 });
+
+/*get contact page*/
+router.get('/contact',function(req,res,next){
+  res.render('contact');
+})
+
+/*get contact page*/
+router.get('/services',function(req,res,next){
+  res.render('services');
+})
 
 module.exports = router;

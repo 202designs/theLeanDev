@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    title= title
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/materialize.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')  
+    style   
+  body
+    header
+        nav.black
+            div.nav-wrapper.container
+                a.brand-logo(href="/") The Lean Dev
+                ul.right.hide-on-med-and-down
+                  li 
+                    a(href="/contact") Contact Us
+                  li
+                    a(href="/services") Services
+                  li 
+                    a(href="https://simulsys.co") Blog
+    main    
+      .row
+        section.container.valign-wrapper#section1
+          h2.header.text-flow.center-align Contact Us
+            p.grey-text.text-darken-3.lighten-3.flow-text
+              section.contact-form
+        .input-items.container
+          .row
+            form.col.s12
+              .row
+                .input-field.col.l4.m4.s12
+                  input#contactName.validate(type='text')
+                  label(for='contactName') Name
+                .input-field.col.l4.m4.s12
+                  input#contactEmail.validate(type='email')
+                  label(for='contactEmail') Email
+                .input-field.col.l4.m4.s12
+                  input#contactPhone.validate(type='text')
+                  label(for='contactPhone') Phone
+              .row
+                .input-field.col.s12
+                  textarea#contactDescription.materialize-textarea
+                  label(for='contactComments') Project Description/Comments
+            a#sendContact.waves-effect.waves.btn.disabled Send
+              i.material-icons.left send
+    
+          block content
+    footer.page-footer.black
+        div.container
+            div.row
+                div.col.l6.s12
+                    h5.white-text The Lean Dev
+        div.footer-copyright
+            div.container @2017 Copyright
+            
+        
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='/javascripts/materialize.min.js')
+    script(src='/javascripts/default.js')
