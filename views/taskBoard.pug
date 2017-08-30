@@ -1,0 +1,118 @@
+doctype html
+html
+  head
+    title= title
+    meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name='viewport')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/materialize.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')  
+    style   
+  body
+    header
+        nav.black
+            div.nav-wrapper.container
+                a.brand-logo(href="/") The Lean Dev
+                ul.right.hide-on-med-and-down
+                  li 
+                    a(href="/contact") Contact Us
+                  li
+                    a(href="/services") Services
+                  li 
+                    a(href="https://simulsys.co") Blog
+                  li
+                    a.button-work(href='#', data-activates='slide-out')
+                      i.material-icons.text-white menu
+        ul#slide-out.side-nav
+           li
+             .user-view
+               .background.blue.lighten-3
+                 img(src='')
+               a(href='#!user')
+                 img.circle(src='/images/wireidea64x64.svg')
+               a(href='#!name')
+                 span.white-text.name John Doe
+               a(href='#!email')
+                 span.white-text.email jdandturk@gmail.com
+           li
+             a(href='#!')
+               i.material-icons cloud
+               | First Link With Icon
+           li
+             a(href='#!') Second Link
+           li
+             .divider
+           li
+             a.subheader Subheader
+           li
+             a.waves-effect(href='#!') Third Link With Waves
+                           
+    main    
+      .row
+        section.kanban-board
+          article.planning.column
+            ul.collection.col.s12.m3.l3.board#toDo
+              li.collection-item
+               div
+                 | Alvin
+                 a.secondary-content(href='#!')
+                   i.material-icons send  
+              li.collection-item todo1
+              li.collection-item todo2
+              li.collection-item todo3
+                
+          article.planning.column
+            ul.collection.col.s12.m3.l3.board#doing
+             li.collection-item Plan1
+             li.collection-item Plan2
+             li.collection-item Plan3
+          article.review.column
+            ul.collection.col.s12.m3.l3.board#review
+              li.collection-item review1
+              li.collection-item review2
+              li.collection-item review3   
+          article.complete.column
+            ul.collection.col.s12.m3.l3.board#complete
+             li.collection-item Doing1
+             li.collection-item Doing2
+             li.collection-item Doing3
+      .row
+          section.task-form.hide
+            .input-items.container
+              .row
+                form.col.s12
+                  .row
+                    .input-field.col.l4.m4.s12
+                      input#taskName.validate(type='text')
+                      label(for='taskName') Task Name
+                    
+                  .row
+                    .input-field.col.s12
+                      textarea#taskDesc.materialize-textarea
+                      label(for='taskDesc') Task Notes
+                a#createTask.waves-effect.waves.btn.disabled Create
+                  i.material-icons.left plus
+                a#cancel.waves-effect.waves.btn.disabled Cancel
+                  i.material-icons.left plus  
+                a#deleteTask.waves-effect.waves.btn.disabled Delete
+                  i.material-icons.left minus 
+                  
+  
+            
+           
+    
+    
+        
+    footer.page-footer.black
+        div.container
+            div.row
+                div.col.l6.s12
+                    h5.white-text The Lean Dev
+        div.footer-copyright
+            div.container @2017 Copyright
+            
+        
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='/javascripts/materialize.min.js')
+    script(src='/javascripts/taskBoard.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js')

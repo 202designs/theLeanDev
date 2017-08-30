@@ -1,6 +1,9 @@
 $(document).ready(function() {
+    //$(body).fadeIn(5000);
     $('select').material_select();
     $('.carousel.carousel-slider').carousel({fullWidth: true});
+    $(".button-work").sideNav();
+
 
   });
 
@@ -42,3 +45,6 @@ $(document).ready(function() {
     Materialize.toast('Email Not Valid', 4000, 'rounded')
     }
   });
+
+
+  
